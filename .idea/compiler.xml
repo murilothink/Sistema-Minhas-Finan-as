@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Sistema-Minhas-Financas-backend" />
         <module name="MinhasFinancasProjeto" />
+        <module name="Sistema-Minhas-Financas-API" />
       </profile>
     </annotationProcessing>
   </component>
