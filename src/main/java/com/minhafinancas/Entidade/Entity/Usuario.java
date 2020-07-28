@@ -1,4 +1,4 @@
-package com.minhafinancas.Entidade;
+package com.minhafinancas.Entidade.Entity;
 
 import javax.persistence.*;
 import java.util.Objects;
