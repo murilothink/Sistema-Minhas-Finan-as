@@ -1,5 +1,6 @@
 package com.minhafinancas.Entidade;
 
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -26,6 +27,13 @@ public class Lancamento {
     @Column(name = "valor")
     private BigDecimal valor;
 
-    @Column(name = "data_cadastro")
-    private LocalDate dataCadastro; //Api da data do java8 (Gravar a data de lançamento)
+//    @Column(name = "data_cadastro")
+//    @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
+//    private LocalDate dataCadastro;
+
+    @Column(name = "tipo")
+    @Enumerated(value = EnumType.STRING)
+    private TipoLancamento tipo;
+
+
 }
