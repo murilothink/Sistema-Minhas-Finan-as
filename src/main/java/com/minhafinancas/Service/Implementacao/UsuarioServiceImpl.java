@@ -1,6 +1,8 @@
 package com.minhafinancas.Service.Implementacao;
 
 import com.minhafinancas.Entidade.Entity.Usuario;
+import com.minhafinancas.Exception.RegraNegocioException;
+import com.minhafinancas.Repository.UsuarioRepository;
 import com.minhafinancas.Service.UsuasrioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +11,9 @@ import org.springframework.stereotype.Service;
 public class UsuarioServiceImpl implements UsuasrioService {
 
     @Autowired
-    private UsuasrioService repository;
+    private UsuarioRepository repository;
 
-    public UsuarioServiceImpl(UsuasrioService repository) {
+    public UsuarioServiceImpl(UsuarioRepository repository) {
         this.repository = repository;
     }
 
@@ -27,6 +29,11 @@ public class UsuarioServiceImpl implements UsuasrioService {
 
     @Override
     public void validarEmail(String email) {
-
+        //Vai receber o boolean, caso for verdadeiro ele vai retornar o verdadeiro
+        boolean existe = repository.existsByEmail(email);
+        if(existe){
+            //Exception tratada em Exception
+            throw new RegraNegocioException("Ja existe um usuario cadastrado com esse email.");
+        }
     }
 }
