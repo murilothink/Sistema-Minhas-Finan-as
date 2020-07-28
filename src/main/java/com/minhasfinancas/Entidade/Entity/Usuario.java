@@ -1,5 +1,6 @@
 package com.minhasfinancas.Entidade.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,6 +9,8 @@ import javax.persistence.*;
 @Table( name = "usuario", schema = "financas")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
 
     @Id
@@ -22,7 +25,7 @@ public class Usuario {
     private String nome;
 
     @Column(name = "senha")
-
+    @JsonIgnore
     private String senha;
 
 }
