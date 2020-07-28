@@ -1,9 +1,8 @@
-package com.minhafinancas.Entidade.Entity;
+package com.minhasfinancas.Entidade.Entity;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table( name = "usuario", schema = "financas")

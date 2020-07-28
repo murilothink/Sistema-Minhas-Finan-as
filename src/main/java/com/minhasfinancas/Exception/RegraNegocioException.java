@@ -1,4 +1,4 @@
-package com.minhafinancas.Exception;
+package com.minhasfinancas.Exception;
 
 public class RegraNegocioException extends RuntimeException {
     public RegraNegocioException(String msg) {

@@ -1,4 +1,4 @@
-package com.minhafinancas;
+package com.minhasfinancas;
 
 
 import org.springframework.boot.SpringApplication;

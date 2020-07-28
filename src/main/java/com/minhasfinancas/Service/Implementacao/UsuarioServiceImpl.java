@@ -1,9 +1,9 @@
-package com.minhafinancas.Service.Implementacao;
+package com.minhasfinancas.Service.Implementacao;
 
-import com.minhafinancas.Entidade.Entity.Usuario;
-import com.minhafinancas.Exception.RegraNegocioException;
-import com.minhafinancas.Repository.UsuarioRepository;
-import com.minhafinancas.Service.UsuasrioService;
+import com.minhasfinancas.Entidade.Entity.Usuario;
+import com.minhasfinancas.Exception.RegraNegocioException;
+import com.minhasfinancas.Repository.UsuarioRepository;
+import com.minhasfinancas.Service.UsuasrioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

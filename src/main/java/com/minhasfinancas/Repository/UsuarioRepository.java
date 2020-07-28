@@ -1,6 +1,6 @@
-package com.minhafinancas.Repository;
+package com.minhasfinancas.Repository;
 
-import com.minhafinancas.Entidade.Entity.Usuario;
+import com.minhasfinancas.Entidade.Entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {

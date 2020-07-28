@@ -1,4 +1,4 @@
-package com.minhafinancas.Entidade.Enum;
+package com.minhasfinancas.Entidade.Enum;
 
 public enum TipoLancamento {
 

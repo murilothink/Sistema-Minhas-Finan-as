@@ -1,14 +1,13 @@
-package com.minhafinancas.Entidade.Entity;
+package com.minhasfinancas.Entidade.Entity;
 
 
-import com.minhafinancas.Entidade.Enum.StatusLancamento;
-import com.minhafinancas.Entidade.Enum.TipoLancamento;
+import com.minhasfinancas.Entidade.Enum.StatusLancamento;
+import com.minhasfinancas.Entidade.Enum.TipoLancamento;
 import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 @Entity
 @Table(name = "Lancamento", schema = "financas")
