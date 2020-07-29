@@ -1,8 +1,8 @@
-package com.minhasfinancas.Entidade.Entity;
+package com.minhasfinancas.Model.Entity;
 
 
-import com.minhasfinancas.Entidade.Enum.StatusLancamento;
-import com.minhasfinancas.Entidade.Enum.TipoLancamento;
+import com.minhasfinancas.Model.Enum.StatusLancamento;
+import com.minhasfinancas.Model.Enum.TipoLancamento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

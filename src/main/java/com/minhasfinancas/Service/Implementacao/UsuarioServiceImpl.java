@@ -1,6 +1,6 @@
 package com.minhasfinancas.Service.Implementacao;
 
-import com.minhasfinancas.Entidade.Entity.Usuario;
+import com.minhasfinancas.Model.Entity.Usuario;
 import com.minhasfinancas.Exception.RegraNegocioException;
 import com.minhasfinancas.Repository.UsuarioRepository;
 import com.minhasfinancas.Service.UsuasrioService;
@@ -32,7 +32,7 @@ public class UsuarioServiceImpl implements UsuasrioService {
         //Vai receber o boolean, caso for verdadeiro ele vai retornar o verdadeiro
         boolean existe = repository.existsByEmail(email);
         if(existe){
-            //Exception tratada em Exception
+           //Exception tratada em Exception
             throw new RegraNegocioException("Ja existe um usuario cadastrado com esse email.");
         }
     }

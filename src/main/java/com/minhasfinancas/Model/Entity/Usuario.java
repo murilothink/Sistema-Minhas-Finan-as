@@ -1,4 +1,4 @@
-package com.minhasfinancas.Entidade.Entity;
+package com.minhasfinancas.Model.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

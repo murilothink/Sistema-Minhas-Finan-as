@@ -1,4 +1,4 @@
-package com.minhasfinancas.Entidade.Enum;
+package com.minhasfinancas.Model.Enum;
 
 public enum StatusLancamento {
 

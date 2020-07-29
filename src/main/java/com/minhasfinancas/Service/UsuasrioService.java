@@ -1,6 +1,6 @@
 package com.minhasfinancas.Service;
 
-import com.minhasfinancas.Entidade.Entity.Usuario;
+import com.minhasfinancas.Model.Entity.Usuario;
 
 public interface UsuasrioService {
 
