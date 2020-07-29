@@ -53,7 +53,6 @@ public class UsuarioServiceTest {
                 .builder()
                 .email("email@email.com")
                 .nome("Joao")
-                .senha("23123")
                 .build();
 
     }
