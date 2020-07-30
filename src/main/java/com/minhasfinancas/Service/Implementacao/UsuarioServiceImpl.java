@@ -30,10 +30,11 @@ public class UsuarioServiceImpl implements UsuasrioService {
         if(!usuario.isPresent()){
             throw new ErroAutenticacao ("Usuário não encontrado para o email informado.");
         }
-        //Caso o email estiver correto vou no banco e busco pelo usuario e senha e faço uma comparação de senha
+        //Caso o email estiver co
+        // rreto vou no banco e busco pelo usuario e senha e faço uma comparação de senha
         //Caso as senhas não sejam verdadeira eu lanço uma RuinTimeExeception
         if(!usuario.get().getSenha().equals(senha)){
-            throw new RegraNegocioException("Senha");
+            throw new ErroAutenticacao("Senha Inválida.");
         }
 
         return usuario.get();

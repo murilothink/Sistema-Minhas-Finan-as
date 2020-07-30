@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -19,17 +20,12 @@ import java.util.Optional;
 @ActiveProfiles("test")
 public class UsuarioServiceTest {
 
-    UsuasrioService service;
+    @SpyBean
+    UsuarioServiceImpl service;
 
     @MockBean
     UsuarioRepository repository;
 
-    @Before
-    public void setUp(){
-
-        service = new UsuarioServiceImpl(repository);
-
-    }
 
     @Test
     public void deveValidarEmail(){
@@ -69,12 +65,15 @@ public class UsuarioServiceTest {
     public void deveLancarErroQuandoNaoEncontrarOUsuarioInformado (){
 
         //cenário
+        //Criando um Mock que recaba um email qualquer e vai me devolver alguma coisa em branco
         Mockito.when(repository.findByEmail(Mockito.anyString())).thenReturn(Optional.empty());
 
         //acao
+        //capturando o erro da exception
         Throwable exception = Assertions.catchThrowable( () -> service.autenticar("email@email.com", "senha") );
 
         //verificacao
+        //fazendo a verificação da mensagem
         Assertions.assertThat(exception)
                 .isInstanceOf(ErroAutenticacao.class)
                 .hasMessage("Usuário não encontrado para o email informado.");
@@ -89,8 +88,11 @@ public class UsuarioServiceTest {
         Mockito.when(repository.findByEmail(Mockito.anyString())).thenReturn(Optional.of(usuario));
 
         //acao
+        //Capturando o erro da exceptiom
         Throwable exception = Assertions.catchThrowable( () -> service.autenticar("email@email.com", "senha123") );
-        Assertions.assertThat(exception).isInstanceOf(ErroAutenticacao.class).hasMessage("Senha");
+
+        //fazendo a verificação da mensagem
+        Assertions.assertThat(exception).isInstanceOf(ErroAutenticacao.class).hasMessage("Senha Inválida.");
 
     }
 
