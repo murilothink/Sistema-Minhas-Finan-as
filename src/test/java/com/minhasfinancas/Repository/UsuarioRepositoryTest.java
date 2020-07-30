@@ -3,7 +3,6 @@ package com.minhasfinancas.Repository;
 // Teste de integração com banco de dados
 
 import com.minhasfinancas.Model.Entity.Usuario;
-import com.minhasfinancas.Service.UsuasrioService;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +13,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.net.PortUnreachableException;
 import java.util.Optional;
 
 
