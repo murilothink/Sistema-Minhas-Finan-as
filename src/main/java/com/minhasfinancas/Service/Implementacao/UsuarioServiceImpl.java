@@ -1,8 +1,8 @@
 package com.minhasfinancas.Service.Implementacao;
 
-import com.minhasfinancas.Exception.ErroDeAutenticacao;
 import com.minhasfinancas.Model.Entity.Usuario;
-import com.minhasfinancas.Exception.RegraNegocioException;
+import com.minhasfinancas.exception.ErroAutenticacao;
+import com.minhasfinancas.exception.RegraNegocioException;
 import com.minhasfinancas.Repository.UsuarioRepository;
 import com.minhasfinancas.Service.UsuasrioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +28,12 @@ public class UsuarioServiceImpl implements UsuasrioService {
         Optional<Usuario> usuario = repository.findByEmail(email);
         //Se o usuario n estiver presente eu lanço uma RuinTimeException
         if(!usuario.isPresent()){
-            throw new ErroDeAutenticacao("Usuário não encontrado");
+            throw new ErroAutenticacao ("Usuário não encontrado para o email informado.");
         }
         //Caso o email estiver correto vou no banco e busco pelo usuario e senha e faço uma comparação de senha
         //Caso as senhas não sejam verdadeira eu lanço uma RuinTimeExeception
         if(!usuario.get().getSenha().equals(senha)){
-            throw new ErroDeAutenticacao("Senha Inválida");
+            throw new RegraNegocioException("Senha");
         }
 
         return usuario.get();
